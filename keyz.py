@@ -1,7 +1,7 @@
 from ui import *
-from uglimodules import kmhook as km
+import km
 
-overlay = UI(width=SCREEN_WIDTH, height=SCREEN_HEIGHT // 4, shortcut_list=shortcut_list)
+overlay = UI(shortcut_list)
 overlay.start()
 overlay.make_non_clickable()
 overlay.set_colorkey_black()
@@ -10,6 +10,7 @@ overlay.show_topmost()
 overlay.display_all_tiles()
 
 while not km.is_pressed(STOP_PROGRAM_KEY):
+    km.sleep(0.01)
     overlay.process_events()
     if km.is_pressed(SELECT_KEY):
         overlay.actualize_display()

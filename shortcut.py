@@ -1,5 +1,5 @@
 import uglimodules.kmhook as km
-
+import json
 
 class Shortcut:
     def __init__(self, symbol: str, code: str):
@@ -16,15 +16,10 @@ class Shortcut:
         km.sleep(0.05)
         km.release('lalt')
 
-shortcut_list = [
-    Shortcut("æ", "145"),
-    Shortcut("É", "144"),
-    Shortcut("Ç", "128"),
-    Shortcut("Œ", "0140"),
-    Shortcut("œ", "0156"),
-    Shortcut("«", "174"),
-    Shortcut("»", "175"),
 
-]
+with open("codes.json","rt",encoding="utf8") as rf:
+    data = json.load(rf)
 
-# Will import shortcuts via a .json file later
+shortcut_list = []
+for element in data:
+    shortcut_list.append(Shortcut(element['symbol'],element['code']))

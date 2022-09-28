@@ -2,9 +2,9 @@ from tile import *
 
 
 class UI(PygameWindow):
-    def __init__(self, width, height, shortcut_list=None):
-        super(UI, self).__init__(0, 0, width, height)
-        self.shortcut_list = shortcut_list
+    def __init__(self,shortcuts=None):
+        super(UI, self).__init__(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+        self.shortcut_list = shortcuts
         self.current_selected_tile = None
         self.tile_list = None
         self.active = False
@@ -48,4 +48,3 @@ class UI(PygameWindow):
             self.active = False
             if self.current_selected_tile:
                 return self.current_selected_tile.shortcut
-

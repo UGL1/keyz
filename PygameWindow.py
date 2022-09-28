@@ -1,5 +1,5 @@
-from uglimodules import kmhook
-from uglimodules.timer import *
+import km as kmhook
+from timer import *
 from Window import Window
 import pygame
 import win32api
@@ -32,9 +32,10 @@ class PygameWindow(Window):
 
     def set_frame_rate(self, frame_rate: int) -> None:
         self.frame_duration = 1000 / (frame_rate or 60)
-        #self.next_frame_timer = Timer(self.frame_duration)
+        # self.next_frame_timer = Timer(self.frame_duration)
 
         self.next_frame_timer = Timer(self.frame_duration)
+
     def get_frame_rate(self) -> int:
         return int(round(1000 / self.frame_duration))
 
