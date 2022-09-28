@@ -24,5 +24,5 @@ TILE_FG_OFF_COLOR = pygame.Color(0, 255, 0)
 
 STOP_PROGRAM_KEY = "pause"
 
-SELECT_KEY = "lalt"
+SELECT_KEY = "scrolllock"
 
